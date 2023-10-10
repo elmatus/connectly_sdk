@@ -24,8 +24,7 @@ func NewConnectlyClient(apiKey, baseURL string) *ConnectlyClient {
 
 func (c *ConnectlyClient) BatchSendCampaign(ctx context.Context, request *BatchSendMessageRequest) (*BatchSendMessageResponse, error) {
 	endpoint := c.baseURL + "/v1/businesses/f1980bf7-c7d6-40ec-b665-dbe13620bffa/send/whatsapp_templated_messages"
-	// You may need to replace {businessId} with the actual business ID in the endpoint URL.
-	fmt.Println("Endpoint URL:", endpoint) // Add this line for debugging
+	fmt.Println("Endpoint URL:", endpoint)
 
 	requestBody, err := json.Marshal(request)
 	if err != nil {

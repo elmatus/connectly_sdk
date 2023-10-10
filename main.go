@@ -16,7 +16,7 @@ func main() {
 	client := NewConnectlyClient(apiKey, baseURL)
 
 	// Path to the CSV file
-	csvFilePath := "connectly_campaign.csv"
+	csvFilePath := "sample_connectly_campaign.csv"
 
 	// Parse CSV file
 	request, err := parseCSV(csvFilePath)
@@ -50,9 +50,9 @@ func parseCSV(csvFilePath string) (*BatchSendMessageRequest, error) {
 
 	for _, line := range lines {
 		req := &BatchSendMessageRequest{
-			Number:       line[1], // Assuming the phone number is in the second column
-			TemplateName: line[2], // Assuming the template name is in the third column
-			Language:     "en",    // Set the language accordingly
+			Number:       line[1],
+			TemplateName: line[2],
+			Language:     "en",
 		}
 		return req, nil
 	}
